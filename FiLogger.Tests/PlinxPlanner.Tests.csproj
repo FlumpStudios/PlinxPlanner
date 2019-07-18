@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="Moq" Version="4.10.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FiLogger.API.DataContracts\PlinxPlanner.API.DataContracts.csproj" />
+    <ProjectReference Include="..\FiLogger.DataAccess\PlinxPlanner.DataAccess.Contracts.csproj" />
+    <ProjectReference Include="..\FiLogger.Service\PlinxPlanner.Service.csproj" />
+    <ProjectReference Include="..\FiLogger\PlinxPlanner.API.csproj" />
+  </ItemGroup>
+
+</Project>

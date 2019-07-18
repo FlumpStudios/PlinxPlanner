@@ -1,0 +1,28 @@
+2019-03-11 11:50:22.863 +00:00 [FTL] Unhandled exception: Found identity scopes and API scopes that use the same names. This is an invalid configuration. Use different names for identity scopes and API scopes. Scopes found: profile
+System.Exception: Found identity scopes and API scopes that use the same names. This is an invalid configuration. Use different names for identity scopes and API scopes. Scopes found: profile
+   at IdentityServer4.Stores.IResourceStoreExtensions.Validate(IEnumerable`1 identity, IEnumerable`1 apiResources) in C:\local\identity\server4\IdentityServer4\src\Extensions\IResourceStoreExtensions.cs:line 58
+   at IdentityServer4.Stores.IResourceStoreExtensions.GetAllEnabledResourcesAsync(IResourceStore store) in C:\local\identity\server4\IdentityServer4\src\Extensions\IResourceStoreExtensions.cs:line 108
+   at IdentityServer4.ResponseHandling.DiscoveryResponseGenerator.CreateDiscoveryDocumentAsync(String baseUrl, String issuerUri) in C:\local\identity\server4\IdentityServer4\src\ResponseHandling\Default\DiscoveryResponseGenerator.cs:line 169
+   at IdentityServer4.Endpoints.DiscoveryEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\Endpoints\DiscoveryEndpoint.cs:line 58
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\Hosting\IdentityServerMiddleware.cs:line 54
+2019-03-11 11:50:22.911 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Found identity scopes and API scopes that use the same names. This is an invalid configuration. Use different names for identity scopes and API scopes. Scopes found: profile
+   at IdentityServer4.Stores.IResourceStoreExtensions.Validate(IEnumerable`1 identity, IEnumerable`1 apiResources) in C:\local\identity\server4\IdentityServer4\src\Extensions\IResourceStoreExtensions.cs:line 58
+   at IdentityServer4.Stores.IResourceStoreExtensions.GetAllEnabledResourcesAsync(IResourceStore store) in C:\local\identity\server4\IdentityServer4\src\Extensions\IResourceStoreExtensions.cs:line 108
+   at IdentityServer4.ResponseHandling.DiscoveryResponseGenerator.CreateDiscoveryDocumentAsync(String baseUrl, String issuerUri) in C:\local\identity\server4\IdentityServer4\src\ResponseHandling\Default\DiscoveryResponseGenerator.cs:line 169
+   at IdentityServer4.Endpoints.DiscoveryEndpoint.ProcessAsync(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\Endpoints\DiscoveryEndpoint.cs:line 58
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\Hosting\IdentityServerMiddleware.cs:line 54
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\Hosting\IdentityServerMiddleware.cs:line 69
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at NWebsec.AspNetCore.Middleware.Middleware.MiddlewareBase.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-11 11:58:49.290 +00:00 [ERR] Invalid scope: role
+2019-03-11 11:58:49.323 +00:00 [ERR] Request validation failed
+2019-03-11 11:59:45.336 +00:00 [ERR] Invalid scope: role
+2019-03-11 11:59:45.337 +00:00 [ERR] Request validation failed
+2019-03-11 12:00:10.908 +00:00 [ERR] Invalid scope: role
+2019-03-11 12:00:10.938 +00:00 [ERR] Request validation failed
+2019-03-11 12:03:49.781 +00:00 [ERR] Invalid scope: role
+2019-03-11 12:03:49.810 +00:00 [ERR] Request validation failed

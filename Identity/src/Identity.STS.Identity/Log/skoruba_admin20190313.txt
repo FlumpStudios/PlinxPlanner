@@ -1,0 +1,20 @@
+2019-03-13 16:56:56.449 +00:00 [ERR] Requests for token response type only must include resource scopes, but no identity scopes.
+2019-03-13 16:56:56.505 +00:00 [ERR] Request validation failed
+2019-03-13 17:04:17.230 +00:00 [ERR] Requests for token response type only must include resource scopes, but no identity scopes.
+2019-03-13 17:04:17.262 +00:00 [ERR] Request validation failed
+2019-03-13 17:05:22.914 +00:00 [ERR] Requests for token response type only must include resource scopes, but no identity scopes.
+2019-03-13 17:05:22.953 +00:00 [ERR] Request validation failed
+2019-03-13 17:05:30.965 +00:00 [ERR] Identity related scope requests, but no openid scope
+{"ClientId":"DealLogAPISwagger","ClientName":"Deal Log Swagger Access","RedirectUri":"http://localhost:5200/oauth2-redirect.html","AllowedRedirectUris":["http://localhost:5200/oauth2-redirect.html"],"SubjectId":"3","ResponseType":"token","ResponseMode":"fragment","GrantType":"implicit","RequestedScopes":"DealLogApi profile","State":"V2VkIE1hciAxMyAyMDE5IDE3OjA1OjMwIEdNVCswMDAwIChHcmVlbndpY2ggTWVhbiBUaW1lKQ==","UiLocales":null,"Nonce":null,"AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"response_type":"token","client_id":"DealLogAPISwagger","redirect_uri":"http://localhost:5200/oauth2-redirect.html","scope":"DealLogApi profile","state":"V2VkIE1hciAxMyAyMDE5IDE3OjA1OjMwIEdNVCswMDAwIChHcmVlbndpY2ggTWVhbiBUaW1lKQ=="},"$type":"AuthorizeRequestValidationLog"}
+2019-03-13 17:05:30.971 +00:00 [ERR] Request validation failed
+2019-03-13 17:05:39.826 +00:00 [ERR] Requests for token response type only must include resource scopes, but no identity scopes.
+2019-03-13 17:05:39.826 +00:00 [ERR] Request validation failed
+2019-03-13 17:09:27.435 +00:00 [ERR] Requests for token response type only must include resource scopes, but no identity scopes.
+2019-03-13 17:09:27.469 +00:00 [ERR] Request validation failed
+2019-03-13 17:14:15.838 +00:00 [ERR] Requests for token response type only must include resource scopes, but no identity scopes.
+2019-03-13 17:14:15.873 +00:00 [ERR] Request validation failed
+2019-03-13 17:16:59.413 +00:00 [ERR] Identity related scope requests, but no openid scope
+{"ClientId":"DealLogAPISwagger","ClientName":"Deal Log Swagger Access","RedirectUri":"http://localhost:5200/oauth2-redirect.html","AllowedRedirectUris":["http://localhost:5200/oauth2-redirect.html"],"SubjectId":"3","ResponseType":"token","ResponseMode":"fragment","GrantType":"implicit","RequestedScopes":"DealLogApi profile email","State":"V2VkIE1hciAxMyAyMDE5IDE3OjE2OjU5IEdNVCswMDAwIChHcmVlbndpY2ggTWVhbiBUaW1lKQ==","UiLocales":null,"Nonce":null,"AuthenticationContextReferenceClasses":null,"DisplayMode":null,"PromptMode":null,"MaxAge":null,"LoginHint":null,"SessionId":null,"Raw":{"response_type":"token","client_id":"DealLogAPISwagger","redirect_uri":"http://localhost:5200/oauth2-redirect.html","scope":"DealLogApi profile email","state":"V2VkIE1hciAxMyAyMDE5IDE3OjE2OjU5IEdNVCswMDAwIChHcmVlbndpY2ggTWVhbiBUaW1lKQ=="},"$type":"AuthorizeRequestValidationLog"}
+2019-03-13 17:16:59.460 +00:00 [ERR] Request validation failed
+2019-03-13 17:22:41.882 +00:00 [ERR] Requests for token response type only must include resource scopes, but no identity scopes.
+2019-03-13 17:22:41.917 +00:00 [ERR] Request validation failed

@@ -1,0 +1,2 @@
+2019-04-01 10:27:36.259 +01:00 [ERR] Invalid scope: ListersDemoApi
+2019-04-01 10:27:36.307 +01:00 [ERR] Request validation failed

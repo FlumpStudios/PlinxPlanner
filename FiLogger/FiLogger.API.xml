@@ -1,0 +1,447 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FiLogger.API</name>
+    </assembly>
+    <members>
+        <member name="T:FiLogger.API.Controllers.V1.CustomerController">
+            <summary>
+            Customer details controller
+            </summary>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.#ctor(AutoMapper.IMapper,FiLogger.Service.Contracts.ICustomerService)">
+            <summary>
+            Constructor method for the customer details controller
+            </summary>
+            <param name="mapper"></param>
+            <param name="service"></param>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.Get">
+            <summary>
+            Return full list of customers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.Get(System.Int32)">
+            <summary>
+            Get customer via their ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.GetAddresses(System.Int32)">
+            <summary>
+            Get list of customer addresses
+            </summary>
+            <param name="id"></param>
+            <returns></returns>     
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.GetDocuments(System.Int32)">
+            <summary>
+            Get list of all the customers documents
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.GetProducts(System.Int32)">
+            <summary>
+            Get list of all the customers products
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.GetTitleOptions">
+            <summary>
+            Get a list of available honorifics
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.Post(FiLogger.API.DataContracts.Request.CustomerPostRequest)">
+            <summary>
+            Create a new customer
+            </summary>
+            <param name="customerDetails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.PostCustomerAddress(System.Int32,FiLogger.API.DataContracts.Request.CustomerAddressPostRequest)">
+            <summary>
+            Create a new address for customer
+            </summary>
+            <param name="customerID"></param>
+            <param name="customerAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.PostCustomerDocument(System.Int32,FiLogger.API.DataContracts.Request.CustomerDocumentsPostRequest)">
+            <summary>
+            Create a new document for customer      
+            </summary>
+            <param name="customerID"></param>
+            <param name="customerDocument"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.PostCustomerProduct(System.Int32,FiLogger.API.DataContracts.Request.CustomerProductPostRequest)">
+            <summary>
+            Create a new product for customer
+            </summary>
+            <param name="customerID"></param>
+            <param name="customerProduct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.PostTitleOption(FiLogger.API.DataContracts.Request.TitleOptionsPostRequest)">
+            <summary>
+            Create an honorific
+            </summary>
+            <param name="titleOption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.Put(System.Int32,FiLogger.API.DataContracts.Request.CustomerPostRequest)">
+            <summary>
+            Update a customer record
+            </summary>
+            <param name="id"></param>
+            <param name="customerDetails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.PutTitleOption(System.Int32,FiLogger.API.DataContracts.Request.TitleOptionsPostRequest)">
+            <summary>
+            Update title honerific
+            NOTE: This may well be moved to another controller and flow. Fits nicely here for current purpose
+            </summary>
+            <param name="id"></param>
+            <param name="titleOption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.Delete(System.Int32)">
+            <summary>
+            Delete a customer record
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.CustomerController.DeleteTitleOption(System.Int32)">
+            <summary>
+            Delete a title option
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FiLogger.API.Controllers.V1.RetailManagerController">
+            <summary>
+            Retail Manager controller
+            </summary>    
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.RetailManagerController.#ctor(AutoMapper.IMapper,FiLogger.Service.Contracts.IRetailManagerService)">
+            <summary>
+            Constructor method for the Retails Manager controller
+            </summary>
+            <param name="mapper"></param>
+            <param name="service"></param>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.RetailManagerController.Get">
+            <summary>
+            Return full list of Retail Managers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.RetailManagerController.Get(System.Int32)">
+            <summary>
+            Get Retail Manager by their ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.RetailManagerController.Post(FiLogger.API.DataContracts.Request.RetailManagerPostRequest)">
+            <summary>
+            Create a new Retail manager
+            </summary>
+            <param name="RetailManager"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.RetailManagerController.Put(System.Int32,FiLogger.API.DataContracts.Request.RetailManagerPostRequest)">
+            <summary>
+            Update a Retail Manager
+            </summary>
+            <param name="id"></param>
+            <param name="retailManager"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.RetailManagerController.Delete(System.Int32)">
+            <summary>
+            Delete a Retail record
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FiLogger.API.Controllers.V1.SalesPersonController">
+            <summary>
+            Controller for sales staff
+            </summary> 
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.SalesPersonController.#ctor(AutoMapper.IMapper,FiLogger.Service.Contracts.ISalesPersonService)">
+            <summary>
+            Constructor method for the sales person details controller
+            </summary>
+            <param name="mapper"></param>
+            <param name="service"></param>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.SalesPersonController.Get">
+            <summary>
+            Return full list of Sales Persons
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.SalesPersonController.Get(System.Int32)">
+            <summary>
+            Get Sales Person by their ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.SalesPersonController.Post(FiLogger.API.DataContracts.Request.SalesPersonPostRequest)">
+            <summary>
+            Create a new Sales Person
+            </summary>
+            <param name="salesPersonDetails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.SalesPersonController.Put(System.Int32,FiLogger.API.DataContracts.Request.SalesPersonPostRequest)">
+            <summary>
+            Update a Sales Persons record
+            </summary>
+            <param name="id"></param>
+            <param name="salesPersonDetails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.SalesPersonController.Delete(System.Int32)">
+            <summary>
+            Delete a Sales Person record
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FiLogger.API.Controllers.V1.VehicleController">
+            <summary>
+            Vehicle details
+            </summary>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.#ctor(AutoMapper.IMapper,FiLogger.Service.Contracts.IVehicleService)">
+            <summary>
+            Constructor method for the vehicle controller
+            </summary>
+            <param name="mapper"></param>
+            <param name="service"></param>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.Get">
+            <summary>
+            Return full list of vehicles
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.Get(System.Int32)">
+            <summary>
+            Get vehicle by ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.GetOwner(System.Int32)">
+            <summary>
+            Get vehicle Owner by ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.GetFranchise">
+            <summary>
+            Return a list of available vehicle franchises 
+            </summary>      
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.GetVehicleTypes">
+            <summary>
+            Return a list of vehicle types
+            </summary>      
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.GetVehcileUses">
+            <summary>
+            Return a list of vehicle uses
+            </summary>      
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.Post(FiLogger.API.DataContracts.Request.VehiclePostRequest)">
+            <summary>
+            Create a vehicle
+            </summary>
+            <param name="vehicleDetails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.PostFranchise(FiLogger.API.DataContracts.Request.FranchisePostRequest)">
+            <summary>
+            Create a franchise
+            </summary>
+            <param name="franchiseDetails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.PostVehicleType(FiLogger.API.DataContracts.Request.VehicleTypePostRequest)">
+            <summary>
+            Create a vehicle type
+            </summary>
+            <param name="vehicleTypeDetails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.Post(FiLogger.API.DataContracts.Request.VehicleUsePostRequest)">
+            <summary>
+            Create a vehicle use
+            </summary>
+            <param name="vehicleUseDetails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.Put(System.Int32,FiLogger.API.DataContracts.Request.VehiclePostRequest)">
+            <summary>
+            Update a vehicle record
+            </summary>
+            <param name="id"></param>
+            <param name="vehicle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.PutFranchise(System.Int32,FiLogger.API.DataContracts.Request.FranchisePostRequest)">
+            <summary>
+            Update a franchise
+            </summary>
+            <param name="id"></param>
+            <param name="franchise"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.PutVehicleType(System.Int32,FiLogger.API.DataContracts.Request.VehicleTypePostRequest)">
+            <summary>
+            Update a vehicle type
+            </summary>
+            <param name="id"></param>
+            <param name="vehicleType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.PutVehicleUse(System.Int32,FiLogger.API.DataContracts.Request.VehicleUsePostRequest)">
+            <summary>
+            Update a vehicle use
+            </summary>
+            <param name="id"></param>
+            <param name="vehicleUse"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.Delete(System.Int32)">
+            <summary>
+            Delete a vehicle record
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.DeleteFranchise(System.Int32)">
+            <summary>
+            Delete a franchise record
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.DeleteVehicleType(System.Int32)">
+            <summary>
+            Delete a vehicle type record
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FiLogger.API.Controllers.V1.VehicleController.DeleteVehicleUse(System.Int32)">
+            <summary>
+            Delete a vehicle use record
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FiLogger.API.Controllers.CustomerControllerV2">
+            <summary>
+            Version 2 of the Customer Controller
+            </summary>
+        </member>
+        <member name="M:FiLogger.API.Controllers.CustomerControllerV2.#ctor(FiLogger.Context.Data.AP_ReplacementContext)">
+            <summary>
+            Constructor merhod for the customer details controller
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:FiLogger.API.Controllers.CustomerControllerV2.GetCustomerDetails">
+            <summary>
+            Get customer via their ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FiLogger.Program">
+            <summary>
+            Entry point class
+            </summary>
+        </member>
+        <member name="M:FiLogger.Program.Main(System.String[])">
+            <summary>
+            The entry point main method
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:FiLogger.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Build the webhost
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FiLogger.Startup">
+            <summary>
+            Startup class
+            </summary>
+        </member>
+        <member name="P:FiLogger.Startup._configuration">
+            <summary>
+            Configuration property
+            </summary>
+        </member>
+        <member name="P:FiLogger.Startup.HostingEnvironment">
+            <summary>
+            HostingEnvironment property
+            </summary>
+        </member>
+        <member name="M:FiLogger.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILogger{FiLogger.Startup})">
+            <summary>
+            .NET core Startup method
+            </summary>
+            <param name="configuration"></param>
+            <param name="env"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:FiLogger.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:FiLogger.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="provider"></param>
+        </member>
+        <member name="T:ListersDemo.API.Swagger.SwaggerDefaultValues">
+            <summary>
+            Represents the Swagger/Swashbuckle operation filter used to document the implicit API version parameter.
+            </summary>
+            <remarks>This <see cref="T:Swashbuckle.AspNetCore.SwaggerGen.IOperationFilter"/> is only required due to bugs in the <see cref="T:Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator"/>.
+            Once they are fixed and published, this class can be removed.</remarks>
+        </member>
+        <member name="M:ListersDemo.API.Swagger.SwaggerDefaultValues.Apply(Swashbuckle.AspNetCore.Swagger.Operation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Applies the filter to the specified operation using the given context.
+            </summary>
+            <param name="operation">The operation to apply the filter to.</param>
+            <param name="context">The current operation filter context.</param>
+        </member>
+    </members>
+</doc>

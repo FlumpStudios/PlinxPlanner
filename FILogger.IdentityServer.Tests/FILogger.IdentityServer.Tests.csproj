@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McApp.AppCore.IdentityServer4" Version="3.5.4" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="Moq" Version="4.10.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FiLogger.Context\FiLogger.Context.csproj" />
+    <ProjectReference Include="..\FiLogger.Service\FiLogger.Service.csproj" />
+    <ProjectReference Include="..\FiLogger.Tests\FiLogger.API.Tests.csproj" />
+    <ProjectReference Include="..\FiLogger\FiLogger.API.csproj" />
+    <ProjectReference Include="..\IdentityServer\IdentityServer.csproj" />
+  </ItemGroup>
+
+</Project>
