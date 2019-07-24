@@ -16,6 +16,9 @@ namespace PlinxPlanner.IoC.Config.Profiles
 
             CreateMap<dm.Models.Sitedetails, vm.Response.Sitedetails>();
             CreateMap<dm.Models.Sitedetails, vm.Request.SiteDetailsPostrequest>().ReverseMap();
+
+            CreateMap<dm.Models.SiteStatus, vm.Response.SiteStatus>();
+            CreateMap<dm.Models.SiteStatus, vm.Request.SiteStatusPostRequest>().ReverseMap();
         }
     }
 }

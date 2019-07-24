@@ -27,6 +27,19 @@ namespace PlinxPlanner.Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "SiteStatus",
+                columns: table => new
+                {
+                    SitesStatusId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SiteStatus", x => x.SitesStatusId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CustomerAddress",
                 columns: table => new
                 {
@@ -62,6 +75,7 @@ namespace PlinxPlanner.Context.Migrations
                     SiteDetailsId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CustomerId = table.Column<int>(nullable: false),
+                    SitesStatusId = table.Column<int>(nullable: false),
                     TemplateId = table.Column<int>(nullable: false),
                     PrimaryColor = table.Column<string>(nullable: true),
                     SecondaryColour = table.Column<string>(nullable: true),
@@ -76,17 +90,33 @@ namespace PlinxPlanner.Context.Migrations
                         principalTable: "Customer",
                         principalColumn: "CustomerId",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Sitedetails_SiteStatus_SitesStatusId",
+                        column: x => x.SitesStatusId,
+                        principalTable: "SiteStatus",
+                        principalColumn: "SitesStatusId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
                 table: "Customer",
                 columns: new[] { "CustomerId", "CompanyName", "FirstContactDate", "FirstName", "LastUpdateDate", "Surname", "Title" },
-                values: new object[] { 1, "Test company 1", new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test Fname", new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test Surname", "Mr" });
+                values: new object[,]
+                {
+                    { 1, "Test company 1", new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test Fname", new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test Surname", "Mr" },
+                    { 2, "Test company 2", new DateTime(2019, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test Fname 2", new DateTime(2019, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test Surname 2", "Mrs" }
+                });
 
             migrationBuilder.InsertData(
-                table: "Customer",
-                columns: new[] { "CustomerId", "CompanyName", "FirstContactDate", "FirstName", "LastUpdateDate", "Surname", "Title" },
-                values: new object[] { 2, "Test company 2", new DateTime(2019, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test Fname 2", new DateTime(2019, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Test Surname 2", "Mrs" });
+                table: "SiteStatus",
+                columns: new[] { "SitesStatusId", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Pending" },
+                    { 2, "Live" },
+                    { 3, "On hold" },
+                    { 4, "Cancelled" }
+                });
 
             migrationBuilder.InsertData(
                 table: "CustomerAddress",
@@ -99,11 +129,11 @@ namespace PlinxPlanner.Context.Migrations
 
             migrationBuilder.InsertData(
                 table: "Sitedetails",
-                columns: new[] { "SiteDetailsId", "Base64Logo", "CustomerId", "PrimaryColor", "SecondaryColour", "TemplateId" },
+                columns: new[] { "SiteDetailsId", "Base64Logo", "CustomerId", "PrimaryColor", "SecondaryColour", "SitesStatusId", "TemplateId" },
                 values: new object[,]
                 {
-                    { 1, null, 1, "FF0000", "4800FF", 2 },
-                    { 2, null, 2, "4800FF", "FF0000", 4 }
+                    { 1, null, 1, "FF0000", "4800FF", 1, 2 },
+                    { 2, null, 2, "4800FF", "FF0000", 2, 4 }
                 });
 
             migrationBuilder.CreateIndex(
@@ -117,6 +147,11 @@ namespace PlinxPlanner.Context.Migrations
                 table: "Sitedetails",
                 column: "CustomerId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sitedetails_SitesStatusId",
+                table: "Sitedetails",
+                column: "SitesStatusId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -129,6 +164,9 @@ namespace PlinxPlanner.Context.Migrations
 
             migrationBuilder.DropTable(
                 name: "Customer");
+
+            migrationBuilder.DropTable(
+                name: "SiteStatus");
         }
     }
 }

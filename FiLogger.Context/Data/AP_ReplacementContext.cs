@@ -26,6 +26,7 @@ namespace PlinxPlanner.Context.Data
         public DbSet<Customer> Customer { get; set; }
 
         public DbSet<Sitedetails> Sitedetails { get; set; }
+        public DbSet<SiteStatus> SiteStatus { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

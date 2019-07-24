@@ -12,12 +12,12 @@ namespace PlinxPlanner.Context.Data
         /// </summary>
         /// <param name="modelBuilder"></param>
         public static void SeedDB(ModelBuilder modelBuilder)
-        {   
-            modelBuilder.Entity<Customer>().HasData(new Customer    
+        {
+            modelBuilder.Entity<Customer>().HasData(new Customer
             {
                 CustomerId = 1,
-                FirstContactDate = new DateTime(2019,1,1),
-                FirstName =  "Test Fname",
+                FirstContactDate = new DateTime(2019, 1, 1),
+                FirstName = "Test Fname",
                 LastUpdateDate = new DateTime(2019, 1, 1),
                 Surname = "Test Surname",
                 CompanyName = "Test company 1",
@@ -27,7 +27,7 @@ namespace PlinxPlanner.Context.Data
              {
                  CustomerId = 2,
                  FirstContactDate = new DateTime(2019, 2, 2),
-                 FirstName = "Test Fname 2" ,
+                 FirstName = "Test Fname 2",
                  LastUpdateDate = new DateTime(2019, 2, 2),
                  Surname = "Test Surname 2",
                  Title = "Mrs",
@@ -67,6 +67,26 @@ namespace PlinxPlanner.Context.Data
             }
             );
 
+            modelBuilder.Entity<SiteStatus>().HasData(new SiteStatus
+            {
+                SitesStatusId = 1,
+                Name = "Pending"
+            },
+            new SiteStatus
+            {
+                SitesStatusId = 2,
+                Name = "Live"
+            },
+            new SiteStatus
+            {
+                SitesStatusId = 3,
+                Name = "On hold"
+            },
+            new SiteStatus
+            {
+                SitesStatusId = 4,
+                Name = "Cancelled"
+            });
 
             modelBuilder.Entity<Sitedetails>().HasData(new Sitedetails
             {
@@ -74,14 +94,17 @@ namespace PlinxPlanner.Context.Data
                 PrimaryColor = "FF0000",
                 SecondaryColour = "4800FF",
                 SiteDetailsId = 1,
-                TemplateId = 2
+                TemplateId = 2,
+                SitesStatusId = 1
+
             }, new Sitedetails
             {
                 CustomerId = 2,
                 PrimaryColor = "4800FF",
                 SecondaryColour = "FF0000",
                 SiteDetailsId = 2,
-                TemplateId = 4
+                TemplateId = 4,
+                SitesStatusId = 2
             });
         }
     }

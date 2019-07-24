@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.Admin", "Identity\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.STS.Identity", "Identity\src\Identity.STS.Identity\Identity.STS.Identity.csproj", "{E46F0755-AC53-48BA-9B3E-0E5B85D7DB49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlinxApplicationForm", "PlinxApplicationForm\PlinxApplicationForm.csproj", "{605F29DD-93ED-4306-8567-91BA8770F925}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlinxApplicationForm", "PlinxApplicationForm\PlinxApplicationForm.csproj", "{605F29DD-93ED-4306-8567-91BA8770F925}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PlinxPlannerAdmin", "PlinxPlannerAdmin\PlinxPlannerAdmin.pyproj", "{FE4F9EF0-1833-47EF-8543-564B94666E7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -223,6 +225,12 @@ Global
 		{605F29DD-93ED-4306-8567-91BA8770F925}.Release|x64.Build.0 = Release|Any CPU
 		{605F29DD-93ED-4306-8567-91BA8770F925}.Release|x86.ActiveCfg = Release|Any CPU
 		{605F29DD-93ED-4306-8567-91BA8770F925}.Release|x86.Build.0 = Release|Any CPU
+		{FE4F9EF0-1833-47EF-8543-564B94666E7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4F9EF0-1833-47EF-8543-564B94666E7A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FE4F9EF0-1833-47EF-8543-564B94666E7A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FE4F9EF0-1833-47EF-8543-564B94666E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4F9EF0-1833-47EF-8543-564B94666E7A}.Release|x64.ActiveCfg = Release|Any CPU
+		{FE4F9EF0-1833-47EF-8543-564B94666E7A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

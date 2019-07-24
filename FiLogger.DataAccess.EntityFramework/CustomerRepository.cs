@@ -22,14 +22,22 @@ namespace PlinxPlanner.DataAccess.EntityFramework
         public async Task<IEnumerable<Customer>> GetCustomer() => await _context.Customer.
             AsNoTracking().
             Include(x => x.CustomerAddress).
-            Include(x => x.Sitedetails)
+            Include(x => x.Sitedetails).
+                ThenInclude(y => y.SiteStatus)
             .ToListAsync();
         public async Task<Customer> GetCustomer(int id) => await _context.Customer.
             AsNoTracking().
             Include(x => x.CustomerAddress).
             Include(x => x.Sitedetails).
-            Include(x => x.CustomerAddress).SingleOrDefaultAsync(i => i.CustomerId == id);
-        public async Task<IEnumerable<CustomerAddress>> GetCustomerAddress(int id) => await _context.CustomerAddress.Where(i => i.CustomerId == id).ToListAsync();     
+                ThenInclude(y=> y.SiteStatus).
+            Include(x => x.CustomerAddress).
+            SingleOrDefaultAsync(i => i.CustomerId == id);
+
+        public async Task<IEnumerable<CustomerAddress>> GetCustomerAddress(
+            int id) => 
+            await _context.CustomerAddress.Where(
+                i => i.CustomerId == id).
+            ToListAsync();     
         #endregion
         
         #region Post request
@@ -39,16 +47,20 @@ namespace PlinxPlanner.DataAccess.EntityFramework
 
 
         #region Put request
-        public void UpdateCustomer(Customer customerDetails) => _context.Update(customerDetails);
+        public void UpdateCustomer(Customer customerDetails) => 
+            _context.Update(customerDetails);
         #endregion
 
         #region Delete Request       
-        public void DeleteCustomer(int id) => _context.Customer.Remove(_context.Customer.Find(id));
+        public void DeleteCustomer(int id) => 
+            _context.Customer.Remove(_context.Customer.Find(id));
         #endregion
 
-        public bool CustomerDetailsExists(int id) => _context.Customer.ToList().Any(e => e.CustomerId == id);      
+        public bool CustomerDetailsExists(int id) => 
+            _context.Customer.ToList().Any(e => e.CustomerId == id);      
         public void Save() => _context.SaveChanges();
-        public async Task SaveAsync() => await _context.SaveChangesAsync();
+        public async Task SaveAsync() 
+            => await _context.SaveChangesAsync();
 
         #region Destructor       
         private bool disposed = false;

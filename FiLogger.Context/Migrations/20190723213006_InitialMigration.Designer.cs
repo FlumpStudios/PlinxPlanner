@@ -10,7 +10,7 @@ using PlinxPlanner.Context.Data;
 namespace PlinxPlanner.Context.Migrations
 {
     [DbContext(typeof(AP_ReplacementContext))]
-    [Migration("20190717204554_InitialMigration")]
+    [Migration("20190723213006_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -145,6 +145,41 @@ namespace PlinxPlanner.Context.Migrations
                         });
                 });
 
+            modelBuilder.Entity("PlinxPlanner.Common.Models.SiteStatus", b =>
+                {
+                    b.Property<int>("SitesStatusId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("SitesStatusId");
+
+                    b.ToTable("SiteStatus");
+
+                    b.HasData(
+                        new
+                        {
+                            SitesStatusId = 1,
+                            Name = "Pending"
+                        },
+                        new
+                        {
+                            SitesStatusId = 2,
+                            Name = "Live"
+                        },
+                        new
+                        {
+                            SitesStatusId = 3,
+                            Name = "On hold"
+                        },
+                        new
+                        {
+                            SitesStatusId = 4,
+                            Name = "Cancelled"
+                        });
+                });
+
             modelBuilder.Entity("PlinxPlanner.Common.Models.Sitedetails", b =>
                 {
                     b.Property<int>("SiteDetailsId")
@@ -159,12 +194,16 @@ namespace PlinxPlanner.Context.Migrations
 
                     b.Property<string>("SecondaryColour");
 
+                    b.Property<int>("SitesStatusId");
+
                     b.Property<int>("TemplateId");
 
                     b.HasKey("SiteDetailsId");
 
                     b.HasIndex("CustomerId")
                         .IsUnique();
+
+                    b.HasIndex("SitesStatusId");
 
                     b.ToTable("Sitedetails");
 
@@ -175,6 +214,7 @@ namespace PlinxPlanner.Context.Migrations
                             CustomerId = 1,
                             PrimaryColor = "FF0000",
                             SecondaryColour = "4800FF",
+                            SitesStatusId = 1,
                             TemplateId = 2
                         },
                         new
@@ -183,6 +223,7 @@ namespace PlinxPlanner.Context.Migrations
                             CustomerId = 2,
                             PrimaryColor = "4800FF",
                             SecondaryColour = "FF0000",
+                            SitesStatusId = 2,
                             TemplateId = 4
                         });
                 });
@@ -200,6 +241,11 @@ namespace PlinxPlanner.Context.Migrations
                     b.HasOne("PlinxPlanner.Common.Models.Customer")
                         .WithOne("Sitedetails")
                         .HasForeignKey("PlinxPlanner.Common.Models.Sitedetails", "CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("PlinxPlanner.Common.Models.SiteStatus", "SiteStatus")
+                        .WithMany("Sitedetails")
+                        .HasForeignKey("SitesStatusId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
