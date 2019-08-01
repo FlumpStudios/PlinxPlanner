@@ -12,8 +12,15 @@ from wagtail.search import index
 from PlinxPlanner.businessLogic.httpManager import Customer
 
 class HomePage(Page):
-    
-    customer = Customer()
+    #Get folder name
+    app_name = os.path.dirname(os.path.abspath(__file__)).split("\\")[-2]
+
+    #Get the id from the folder name
+    app_id = app_name.split("_")[1]
+
+    customer = Customer(app_id)
+
+    intro_header = models.CharField(max_length=50,default=customer.organsiationName or "Welcome to our website!")
     
     intro_text = RichTextField(blank=True)
     intro_continue_button_text = models.CharField(max_length=50, default='Continue')        
@@ -22,9 +29,7 @@ class HomePage(Page):
     client_surname = models.CharField(max_length=50, default=customer.getSurname())    
     client_organisationName = models.CharField(max_length=50, default=customer.getOrgansiationName(), null=True)
 
-    intro_header = models.CharField(max_length=50,default=customer.organsiationName or "Welcome to our website!")
-    app_name = os.path.dirname(os.path.abspath(__file__)).split("\\")[1]
-
+    
     intro_background = models.ForeignKey(
         'wagtailimages.Image',
         null=True,

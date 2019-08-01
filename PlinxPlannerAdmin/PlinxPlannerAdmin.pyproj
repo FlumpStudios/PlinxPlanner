@@ -76,6 +76,9 @@
     <Folder Include="CreatedSites\" />
     <Folder Include="Templates\" />
     <Folder Include="Repository\" />
+    <Folder Include="Templates\Template1 - Copy\" />
+    <Folder Include="Templates\Template1 - Copy\home\" />
+    <Folder Include="Templates\Template1 - Copy\home\__pycache__\" />
     <Folder Include="Templates\Template2\" />
     <Folder Include="Templates\Template2\home\" />
     <Folder Include="Templates\Template1 - Copy\home\migrations\" />

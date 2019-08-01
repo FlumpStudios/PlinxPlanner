@@ -15,6 +15,7 @@ namespace PlinxPlanner.Common.Models
         public string PrimaryColor { get; set; }
         public string SecondaryColour { get; set; }
         public string Base64Logo { get; set; }
+        public bool SuperUserCreated { get; set; }
         public SiteStatus SiteStatus { get; set; }
     }
 }

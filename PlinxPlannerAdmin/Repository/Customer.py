@@ -1,35 +1,24 @@
 
 import requests
 import settings
-
+import json
 
 class Customer():
-    def __init__(self, id):
-        json_text = requests.get(settings.api_endpoint + "customer/" + id).json()
-        self.firstname = json_text["firstName"]
-        self.surname = json_text["surname"]
-        try:
-            self.organsiationName = json_text["organsiationName"] or ""
-            self.isOrganisation = json_text["isOrgansiation"] or ""        
-        except Exception as e:
-            print(str(e))
+    def getList(self):
+        return requests.get(settings.api_endpoint + "customer/").json()
     
-    def getFirstName(self):
-        return self.firstname
+    def get(self,id):
+        return requests.get(settings.api_endpoint + "customer/" + str(id)).json()
+    
+    def post(self,customer):
+        return
 
-    def getSurname(self):
-        return self.surname
-    
-    def getOrgansiationName(self):
-        return self.organsiationName
+    def update(self,id,cust):
+        print ("Updating customer status...")
+        
+        print(json.dumps(cust))
+        result = requests.put(settings.api_endpoint + "customer/" + str(id),headers={'Content-type':'application/json', 'Accept':'application/json'},  data=json.dumps(cust))
+        print(result)
 
-    def getIsOrganisation(self):
-        return self.isOrganisation == "true"
+        
 
-class Customer_list():
-    def __init__(self):
-        self.json_text = requests.get(settings.api_endpoint + "customer").json()      
-    
-    def getCustomerList(self):
-        return self.json_text
-    

@@ -164,17 +164,27 @@ namespace PlinxPlanner.Context.Migrations
                         new
                         {
                             SitesStatusId = 2,
-                            Name = "Live"
+                            Name = "Created"
                         },
                         new
                         {
                             SitesStatusId = 3,
-                            Name = "On hold"
+                            Name = "Staging"
                         },
                         new
                         {
                             SitesStatusId = 4,
+                            Name = "Live"
+                        },
+                        new
+                        {
+                            SitesStatusId = 5,
                             Name = "Cancelled"
+                        },
+                        new
+                        {
+                            SitesStatusId = 6,
+                            Name = "Deleted"
                         });
                 });
 
@@ -193,6 +203,8 @@ namespace PlinxPlanner.Context.Migrations
                     b.Property<string>("SecondaryColour");
 
                     b.Property<int>("SitesStatusId");
+
+                    b.Property<bool>("SuperUserCreated");
 
                     b.Property<int>("TemplateId");
 
@@ -213,6 +225,7 @@ namespace PlinxPlanner.Context.Migrations
                             PrimaryColor = "FF0000",
                             SecondaryColour = "4800FF",
                             SitesStatusId = 1,
+                            SuperUserCreated = false,
                             TemplateId = 2
                         },
                         new
@@ -222,6 +235,7 @@ namespace PlinxPlanner.Context.Migrations
                             PrimaryColor = "4800FF",
                             SecondaryColour = "FF0000",
                             SitesStatusId = 2,
+                            SuperUserCreated = false,
                             TemplateId = 4
                         });
                 });

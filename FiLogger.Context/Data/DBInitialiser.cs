@@ -75,17 +75,27 @@ namespace PlinxPlanner.Context.Data
             new SiteStatus
             {
                 SitesStatusId = 2,
-                Name = "Live"
+                Name = "Created"
             },
             new SiteStatus
             {
                 SitesStatusId = 3,
-                Name = "On hold"
+                Name = "Staging"
             },
             new SiteStatus
             {
                 SitesStatusId = 4,
+                Name = "Live"
+            },
+            new SiteStatus
+            {
+                SitesStatusId = 5,
                 Name = "Cancelled"
+            },
+            new SiteStatus
+            {
+                SitesStatusId = 6,
+                Name = "Deleted"
             });
 
             modelBuilder.Entity<Sitedetails>().HasData(new Sitedetails
@@ -94,7 +104,7 @@ namespace PlinxPlanner.Context.Data
                 PrimaryColor = "FF0000",
                 SecondaryColour = "4800FF",
                 SiteDetailsId = 1,
-                TemplateId = 2,
+                TemplateId = 1,
                 SitesStatusId = 1
 
             }, new Sitedetails
@@ -103,7 +113,7 @@ namespace PlinxPlanner.Context.Data
                 PrimaryColor = "4800FF",
                 SecondaryColour = "FF0000",
                 SiteDetailsId = 2,
-                TemplateId = 4,
+                TemplateId = 2,
                 SitesStatusId = 2
             });
         }

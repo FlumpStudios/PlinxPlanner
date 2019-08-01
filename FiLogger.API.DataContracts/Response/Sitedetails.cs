@@ -11,8 +11,9 @@ namespace PlinxPlanner.API.DataContracts.Response
         public int SitesStatusId { get; set; }
         public int TemplateId { get; set; }
         public string PrimaryColor { get; set; }
-        public string SecondaryColour { get; set; }
+        public string SecondaryColour { get; set; }        
         public string Base64Logo { get; set; }
+        public bool SuperUserCreated { get; set; }
         public SiteStatus SiteStatus { get; set; }
     }
 }
