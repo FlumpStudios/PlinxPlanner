@@ -50,8 +50,8 @@ def ftp(companyName, id):
     fullpath = dir_path + "\\" + toDirectory 
     shutil.make_archive(fullpath, 'zip', fullpath)
     
-    ftp = FTP('xx')
-    ftp.login(user='xxx', passwd = 'xxx')
+    ftp = FTP('xxxxxxxxxxx')
+    ftp.login(user='xxxxxxxx', passwd = 'xxxxxxxx')
     filename = dir_path + "\\" +  "CreatedSites\\" + fn + ".zip"
     file = open(filename,'rb')
     ftp.storbinary('STOR '+ fn + '.zip', file)     

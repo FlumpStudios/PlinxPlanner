@@ -140,8 +140,8 @@ namespace PlinxPlanner
                         options.OperationFilter<SwaggerDefaultValues>();
 
                         //If an xml comments path has been specified in the app settings then add Xml comments intergration with swagger
-                        if (!string.IsNullOrEmpty(_appSettings.Swagger.XmlCommentsLocation))
-                                options.IncludeXmlComments(_appSettings.Swagger.XmlCommentsLocation);
+                        //if (!string.IsNullOrEmpty(_appSettings.Swagger.XmlCommentsLocation))
+                          //      options.IncludeXmlComments(_appSettings.Swagger.XmlCommentsLocation);
                     });
                 }
 

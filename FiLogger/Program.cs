@@ -17,25 +17,25 @@ namespace PlinxPlanner
             /// <param name="args"></param>
             public static void Main(string[] args)
             {
-                const string APP_SETTINGS_NAME = "appsettings.json";
+                //const string APP_SETTINGS_NAME = "appsettings.json";
 
-                var appSettings = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(APP_SETTINGS_NAME)
-                .Build();
+                //var appSettings = new ConfigurationBuilder()
+                //.SetBasePath(Directory.GetCurrentDirectory())
+                //.AddJsonFile(APP_SETTINGS_NAME)
+                //.Build();
 
-                //Setup up serilog logging. PM: 15/02/2019
-                var connectionString = appSettings.GetSection("AppSettings:Database:ConnectionString").Value;
-                var SqlTable = appSettings.GetSection("Logging:sqlTable").Value;
+                ////Setup up serilog logging. PM: 15/02/2019
+                //var connectionString = appSettings.GetSection("AppSettings:Database:ConnectionString").Value;
+                //var SqlTable = appSettings.GetSection("Logging:sqlTable").Value;
 
-                Log.Logger = new LoggerConfiguration()
-                   .MinimumLevel.Error()            
-                   .Enrich.FromLogContext()
-                   .WriteTo.MSSqlServer(
-                                connectionString,
-                               SqlTable,
-                               autoCreateSqlTable: true)
-                   .CreateLogger();
+                //Log.Logger = new LoggerConfiguration()
+                //   .MinimumLevel.Error()            
+                //   .Enrich.FromLogContext()
+                //   .WriteTo.MSSqlServer(
+                //                connectionString,
+                //               SqlTable,
+                //               autoCreateSqlTable: true)
+                //   .CreateLogger();
 
                 try
                 {
@@ -43,7 +43,7 @@ namespace PlinxPlanner
                 }
                 finally
                 {
-                    Log.CloseAndFlush();
+                    //Log.CloseAndFlush();
                 }
             }
 
