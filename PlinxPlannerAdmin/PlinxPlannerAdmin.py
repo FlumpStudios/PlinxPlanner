@@ -194,7 +194,6 @@ class Popup:
             parent.clear_table()
         
         def set_live():
-            FileManger.ftp(company, self.clientId)
             self.currentCust["sitedetails"]["sitesStatusId"] = "4"
             Customer.Customer().update(self.clientId,self.currentCust)
             parent.clear_table()
@@ -244,18 +243,15 @@ class Popup:
                 create_another_super_user_button = tk.Button(master, text="Create another Super user",  command = create_super_user).grid(row=22,columnspan=2,sticky='nesw')
                 
                 #Only allow FTP to site if site created and super user created
-                if (status == "Created"):
-                    create_site_button = tk.Button(master, text="Upload to server",  command = ftp)
-                else:
-                    create_site_button = tk.Button(master, text="Re-upload to server",  command = ftp).grid(row=23,columnspan=2,sticky='nesw')
-              
+                create_site_button = tk.Button(master, text="Upload to server",  command = ftp).grid(row=25, columnspan=2,sticky='nesw')               
 
             else:
-                create_super_user_button = tk.Button(master, text="Create Super user",  command = create_super_user).grid(row=24, columnspan=2,sticky='nesw')
+                create_super_user_button = tk.Button(master, text="Create Super user",  command = create_super_user).grid(row=26, columnspan=2,sticky='nesw')
                 
        
-        set_live_button = tk.Button(master, text="Set site to live",  command = set_live).grid(row=25,columnspan=2,sticky='nesw')
-            
+        if(status == "Staging"):
+            set_live_button = tk.Button(master, text="Set site to live",  command = set_live).grid(row=27,columnspan=2,sticky='nesw')
+          
 
         
     def close_windows(self):
