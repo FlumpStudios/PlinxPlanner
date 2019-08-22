@@ -157,7 +157,7 @@ class Popup:
                 print("Error creating site!!!")
                 return
             self.currentCust["sitedetails"]["sitesStatusId"] = "2"
-            customer.update(id,self.currentCust)
+            Customer.Customer().update(self.clientId,self.currentCust)
             parent.clear_table()
             self.close_windows()
 
@@ -176,6 +176,7 @@ class Popup:
                 return
             self.currentCust["sitedetails"]["superUserCreated"] = "true"
             Customer.Customer().update(self.clientId,self.currentCust)
+
             parent.clear_table()
             self.close_windows()
 
@@ -193,6 +194,7 @@ class Popup:
             parent.clear_table()
         
         def set_live():
+            FileManger.ftp(company, self.clientId)
             self.currentCust["sitedetails"]["sitesStatusId"] = "4"
             Customer.Customer().update(self.clientId,self.currentCust)
             parent.clear_table()
@@ -251,8 +253,8 @@ class Popup:
             else:
                 create_super_user_button = tk.Button(master, text="Create Super user",  command = create_super_user).grid(row=24, columnspan=2,sticky='nesw')
                 
-        if(status == "Staging"):
-            set_live_button = tk.Button(master, text="Set site to live",  command = set_live).grid(row=25,columnspan=2,sticky='nesw')
+       
+        set_live_button = tk.Button(master, text="Set site to live",  command = set_live).grid(row=25,columnspan=2,sticky='nesw')
             
 
         

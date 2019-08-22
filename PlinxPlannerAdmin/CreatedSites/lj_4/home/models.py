@@ -10,8 +10,6 @@ from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from PlinxPlanner.businessLogic.httpManager import Customer
-from PlinxPlanner.businessLogic.httpManager import Content
-
 
 class HomePage(Page):
     #Get folder name
@@ -21,17 +19,16 @@ class HomePage(Page):
     app_id = app_name.split("_")[1]
 
     customer = Customer(app_id)
-    content = Content()
 
-    intro_header = models.CharField(max_length=50,default=content.get_intro_title)
+    intro_header = models.CharField(max_length=50,default=customer.organsiationName or "Welcome to our website!")
     
-    intro_text = RichTextField(blank=True,default=Content.get_intro_text)
-
+    intro_text = RichTextField(blank=True)
     intro_continue_button_text = models.CharField(max_length=50, default='Continue')        
     
     client_firstname = models.CharField(max_length=50, default=customer.getFirstName())    
     client_surname = models.CharField(max_length=50, default=customer.getSurname())    
     client_organisationName = models.CharField(max_length=50, default=customer.getOrgansiationName(), null=True)
+
     
     intro_background = models.ForeignKey(
         'wagtailimages.Image',
@@ -50,18 +47,6 @@ class HomePage(Page):
                 FieldPanel('client_organisationName'),         
             ],
             heading="Client Information",  
-        ),
-    ]
-
-    content_panels += [
-        MultiFieldPanel(
-            [
-                FieldPanel('intro_header'),
-                FieldPanel('intro_text'),
-                FieldPanel('intro_continue_button_text'),
-                ImageChooserPanel('intro_background')
-            ],
-            heading="Introduction",  
         ),
     ]
 

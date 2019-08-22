@@ -19,8 +19,9 @@ def copyTemplateToOutPut(template, companyName, id):
 
     try:
         copy_tree(fromDirectory, toDirectory)
-    except:
-        print("Site creation failed")
+    except Exception as e:
+        print("Site creation failed " + str(e))
+
     else:
         print("Site created at " + toDirectory)
         
@@ -48,10 +49,14 @@ def ftp(companyName, id):
     toDirectory = "CreatedSites\\" + fn
     dir_path = os.path.dirname(os.path.realpath(__file__))         
     fullpath = dir_path + "\\" + toDirectory 
-    shutil.make_archive(fullpath, 'zip', fullpath)
+    print ("Fullpath = " + fullpath)
+    try:
+        shutil.make_archive(fullpath, 'zip', fullpath)
+    except Exception as e:
+        print (str(e))
     
     ftp = FTP('home674408092.1and1-data.host')
-    ftp.login(user='ftp88703147-0', passwd = 'PlinxPlanner_2019')
+    ftp.login(user='ftp88703147-0', passwd = 'Pacman@1981')
     filename = dir_path + "\\" +  "CreatedSites\\" + fn + ".zip"
     file = open(filename,'rb')
     ftp.storbinary('STOR '+ fn + '.zip', file)     
