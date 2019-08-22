@@ -217,8 +217,6 @@ class Popup:
             self.currentCust["customerAddress"]["emailAddress"] = email.get()
             self.currentCust["sitedetails"]["templateId"] = template.get()
 
-           
-
             Customer.Customer().update(self.clientId,self.currentCust)
             parent.clear_table()
             self.close_windows()

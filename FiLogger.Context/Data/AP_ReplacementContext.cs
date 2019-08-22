@@ -24,9 +24,13 @@ namespace PlinxPlanner.Context.Data
 
         public DbSet<CustomerAddress> CustomerAddress { get; set; }
         public DbSet<Customer> Customer { get; set; }
-
         public DbSet<Sitedetails> Sitedetails { get; set; }
         public DbSet<SiteStatus> SiteStatus { get; set; }
+        public DbSet<DefaultContent> DefaultContent { get; set; }
+        public DbSet<DefaultSkills> DefaultSkills { get; set; }
+        public DbSet<DefaultComments> DefaultComments { get; set; }
+        public DbSet<DefaultPortfolio> DefaultPortfolio { get; set; }
+        public DbSet<DefaultExperiance> DefaultExperiance { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -143,6 +143,296 @@ namespace PlinxPlanner.Context.Migrations
                         });
                 });
 
+            modelBuilder.Entity("PlinxPlanner.Common.Models.DefaultComments", b =>
+                {
+                    b.Property<int>("DefaultCommentsId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Author");
+
+                    b.Property<string>("Content");
+
+                    b.Property<int>("DefaultContentId");
+
+                    b.HasKey("DefaultCommentsId");
+
+                    b.HasIndex("DefaultContentId");
+
+                    b.ToTable("DefaultComments");
+
+                    b.HasData(
+                        new
+                        {
+                            DefaultCommentsId = 1,
+                            Author = "Mr Smith",
+                            Content = "Comment will be added here",
+                            DefaultContentId = 1
+                        },
+                        new
+                        {
+                            DefaultCommentsId = 2,
+                            Author = "Mrs Jones",
+                            Content = "Comment will be added here",
+                            DefaultContentId = 1
+                        },
+                        new
+                        {
+                            DefaultCommentsId = 3,
+                            Author = "Dr Peterson",
+                            Content = "Comment will be added here",
+                            DefaultContentId = 1
+                        },
+                        new
+                        {
+                            DefaultCommentsId = 4,
+                            Author = "Mr Wright",
+                            Content = "Comment will be added here",
+                            DefaultContentId = 1
+                        },
+                        new
+                        {
+                            DefaultCommentsId = 5,
+                            Author = "Miss Baker",
+                            Content = "Comment will be added here",
+                            DefaultContentId = 1
+                        },
+                        new
+                        {
+                            DefaultCommentsId = 6,
+                            Author = "Mrs Hall",
+                            Content = "Comment will be added here",
+                            DefaultContentId = 1
+                        });
+                });
+
+            modelBuilder.Entity("PlinxPlanner.Common.Models.DefaultContent", b =>
+                {
+                    b.Property<int>("DefaultContentId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AboutSection");
+
+                    b.Property<string>("Footer");
+
+                    b.Property<string>("IntroText");
+
+                    b.Property<string>("IntroTitle");
+
+                    b.HasKey("DefaultContentId");
+
+                    b.ToTable("DefaultContent");
+
+                    b.HasData(
+                        new
+                        {
+                            DefaultContentId = 1,
+                            AboutSection = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            Footer = "Copyright © 2019 All rights reserved | This template is made with  by Colorlib",
+                            IntroText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                            IntroTitle = "Hi, welcome to my site"
+                        });
+                });
+
+            modelBuilder.Entity("PlinxPlanner.Common.Models.DefaultExperiance", b =>
+                {
+                    b.Property<int>("DefaultExperianceId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Company");
+
+                    b.Property<int>("DefaultContentId");
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime?>("FromDate");
+
+                    b.Property<string>("JobTitle");
+
+                    b.Property<DateTime?>("ToDate");
+
+                    b.HasKey("DefaultExperianceId");
+
+                    b.HasIndex("DefaultContentId");
+
+                    b.ToTable("DefaultExperiance");
+
+                    b.HasData(
+                        new
+                        {
+                            DefaultExperianceId = 1,
+                            Company = "Company 1",
+                            DefaultContentId = 1,
+                            Description = "Details of your work experiance go here",
+                            FromDate = new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            JobTitle = "Your Job Title"
+                        },
+                        new
+                        {
+                            DefaultExperianceId = 2,
+                            Company = "Company 2",
+                            DefaultContentId = 1,
+                            Description = "Details of your work experiance go here",
+                            FromDate = new DateTime(2018, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            JobTitle = "Your Job Title",
+                            ToDate = new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            DefaultExperianceId = 3,
+                            Company = "Company 3",
+                            DefaultContentId = 1,
+                            Description = "Details of your work experiance go here",
+                            FromDate = new DateTime(2017, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            JobTitle = "Your Job Title",
+                            ToDate = new DateTime(2018, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
+                });
+
+            modelBuilder.Entity("PlinxPlanner.Common.Models.DefaultPortfolio", b =>
+                {
+                    b.Property<int>("DefaultPortFolioId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("DefaultContentId");
+
+                    b.Property<string>("ImageSrc");
+
+                    b.Property<string>("Link");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("DefaultPortFolioId");
+
+                    b.HasIndex("DefaultContentId");
+
+                    b.ToTable("DefaultPortfolio");
+
+                    b.HasData(
+                        new
+                        {
+                            DefaultPortFolioId = 1,
+                            DefaultContentId = 1,
+                            ImageSrc = "http://www.testsrc.com",
+                            Link = "http://www.testlink.com",
+                            Name = "Project 1",
+                            Type = "Website"
+                        },
+                        new
+                        {
+                            DefaultPortFolioId = 2,
+                            DefaultContentId = 1,
+                            ImageSrc = "http://www.testsrc.com",
+                            Link = "http://www.testlink.com",
+                            Name = "Project 2",
+                            Type = "Website"
+                        },
+                        new
+                        {
+                            DefaultPortFolioId = 3,
+                            DefaultContentId = 1,
+                            ImageSrc = "http://www.testsrc.com",
+                            Link = "http://www.testlink.com",
+                            Name = "Project 3",
+                            Type = "Website"
+                        },
+                        new
+                        {
+                            DefaultPortFolioId = 4,
+                            DefaultContentId = 1,
+                            ImageSrc = "http://www.testsrc.com",
+                            Link = "http://www.testlink.com",
+                            Name = "Project 4",
+                            Type = "App"
+                        },
+                        new
+                        {
+                            DefaultPortFolioId = 5,
+                            DefaultContentId = 1,
+                            ImageSrc = "http://www.testsrc.com",
+                            Link = "http://www.testlink.com",
+                            Name = "Project 5",
+                            Type = "App"
+                        },
+                        new
+                        {
+                            DefaultPortFolioId = 6,
+                            DefaultContentId = 1,
+                            ImageSrc = "http://www.testsrc.com",
+                            Link = "http://www.testlink.com",
+                            Name = "Project 6",
+                            Type = "App"
+                        });
+                });
+
+            modelBuilder.Entity("PlinxPlanner.Common.Models.DefaultSkills", b =>
+                {
+                    b.Property<int>("DefaultSkillsId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("DefaultContentId");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("Value");
+
+                    b.HasKey("DefaultSkillsId");
+
+                    b.HasIndex("DefaultContentId");
+
+                    b.ToTable("DefaultSkills");
+
+                    b.HasData(
+                        new
+                        {
+                            DefaultSkillsId = 1,
+                            DefaultContentId = 1,
+                            Name = "C#",
+                            Value = 90
+                        },
+                        new
+                        {
+                            DefaultSkillsId = 2,
+                            DefaultContentId = 1,
+                            Name = "CSS",
+                            Value = 75
+                        },
+                        new
+                        {
+                            DefaultSkillsId = 3,
+                            DefaultContentId = 1,
+                            Name = "Javascript",
+                            Value = 80
+                        },
+                        new
+                        {
+                            DefaultSkillsId = 4,
+                            DefaultContentId = 1,
+                            Name = "SQL",
+                            Value = 70
+                        },
+                        new
+                        {
+                            DefaultSkillsId = 5,
+                            DefaultContentId = 1,
+                            Name = "C++",
+                            Value = 55
+                        },
+                        new
+                        {
+                            DefaultSkillsId = 6,
+                            DefaultContentId = 1,
+                            Name = "Python",
+                            Value = 87
+                        });
+                });
+
             modelBuilder.Entity("PlinxPlanner.Common.Models.SiteStatus", b =>
                 {
                     b.Property<int>("SitesStatusId")
@@ -226,7 +516,7 @@ namespace PlinxPlanner.Context.Migrations
                             SecondaryColour = "4800FF",
                             SitesStatusId = 1,
                             SuperUserCreated = false,
-                            TemplateId = 2
+                            TemplateId = 1
                         },
                         new
                         {
@@ -236,7 +526,7 @@ namespace PlinxPlanner.Context.Migrations
                             SecondaryColour = "FF0000",
                             SitesStatusId = 2,
                             SuperUserCreated = false,
-                            TemplateId = 4
+                            TemplateId = 2
                         });
                 });
 
@@ -245,6 +535,38 @@ namespace PlinxPlanner.Context.Migrations
                     b.HasOne("PlinxPlanner.Common.Models.Customer")
                         .WithOne("CustomerAddress")
                         .HasForeignKey("PlinxPlanner.Common.Models.CustomerAddress", "CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("PlinxPlanner.Common.Models.DefaultComments", b =>
+                {
+                    b.HasOne("PlinxPlanner.Common.Models.DefaultContent")
+                        .WithMany("DefaultComments")
+                        .HasForeignKey("DefaultContentId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("PlinxPlanner.Common.Models.DefaultExperiance", b =>
+                {
+                    b.HasOne("PlinxPlanner.Common.Models.DefaultContent")
+                        .WithMany("DefaultExperiance")
+                        .HasForeignKey("DefaultContentId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("PlinxPlanner.Common.Models.DefaultPortfolio", b =>
+                {
+                    b.HasOne("PlinxPlanner.Common.Models.DefaultContent")
+                        .WithMany("DefaultPortfolio")
+                        .HasForeignKey("DefaultContentId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("PlinxPlanner.Common.Models.DefaultSkills", b =>
+                {
+                    b.HasOne("PlinxPlanner.Common.Models.DefaultContent")
+                        .WithMany("DefaultSkills")
+                        .HasForeignKey("DefaultContentId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

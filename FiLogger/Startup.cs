@@ -202,11 +202,13 @@ namespace PlinxPlanner
 
             //Repos
             services.AddTransient<ICustomerRepository, CustomerRepository>();
-            
+            services.AddTransient<IContentRepository, ContentRepository>();
+
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             //Service Layer dependencies
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IContentService, ContentService>();
             
             //Singletons
             services.AddSingleton<ICustomMemCache>(new FiLoggerMemCache(_appSettings.Caching.MemorySizeLimit));
