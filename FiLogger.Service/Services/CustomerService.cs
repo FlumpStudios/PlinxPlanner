@@ -1,5 +1,4 @@
-﻿using PlinxPlanner.Caching;
-using PlinxPlanner.Common.Models;
+﻿using PlinxPlanner.Common.Models;
 using PlinxPlanner.DataAccess.Contracts.RepositoryContracts;
 using PlinxPlanner.DataAccess.EntityFramework;
 using PlinxPlanner.Service.Contracts;
@@ -12,15 +11,13 @@ namespace PlinxPlanner.Service.Services
 {
     public class CustomerService : ICustomerService
     {
-        private readonly ICachingManager _cachingController;
         private readonly ICustomerRepository _repository;
         private readonly ILogger<CustomerService> _logger;
 
-        public CustomerService(ICachingManager cachingController, 
+        public CustomerService( 
             ICustomerRepository customerRepository, 
             ILogger<CustomerService> logger)
-        {
-            _cachingController = cachingController;
+        {            
             _repository = customerRepository;
             _logger = logger;
         }

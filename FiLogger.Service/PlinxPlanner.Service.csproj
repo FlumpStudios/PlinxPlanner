@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FiLogger.Caching\PlinxPlanner.Caching.Contracts.csproj" />
     <ProjectReference Include="..\FiLogger.DataAccess.EntityFramework\PlinxPlanner.DataAccess.EntityFramework.csproj" />
     <ProjectReference Include="..\FiLogger.DataAccess\PlinxPlanner.DataAccess.Contracts.csproj" />
   </ItemGroup>

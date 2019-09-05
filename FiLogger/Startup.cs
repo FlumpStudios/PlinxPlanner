@@ -21,8 +21,6 @@ using System.Collections.Generic;
 using PlinxPlanner.IoC.Config.OperationFilters;
 using Microsoft.Extensions.Logging;
 using PlinxPlanner.DataAccess.EntityFramework;
-using PlinxPlanner.Caching;
-using PlinxPlanner.Caching.MemCache;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -197,9 +195,7 @@ namespace PlinxPlanner
             //Add the CryptoManager service through DI and pass through the input string and salt to the contructor
             //The keys are kept in the secret folder for developement. When running for the first time you will need to add the EncryptionCipher:inputString and EncryptionCipher:sale to your secrets.
             //services.AddTransient<ICryptoManager>(s => new CryptoManager(inputString, salt));
-
-            services.AddTransient<ICachingManager, CachingManager>();
-
+                        
             //Repos
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IContentRepository, ContentRepository>();
@@ -208,10 +204,8 @@ namespace PlinxPlanner
 
             //Service Layer dependencies
             services.AddTransient<ICustomerService, CustomerService>();
-            services.AddTransient<IContentService, ContentService>();
+            services.AddTransient<IContentService, ContentService>();           
             
-            //Singletons
-            services.AddSingleton<ICustomMemCache>(new FiLoggerMemCache(_appSettings.Caching.MemorySizeLimit));
         }
     
 

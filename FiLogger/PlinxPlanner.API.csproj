@@ -38,8 +38,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\cryptolib\CryptoLib.csproj" />
-    <ProjectReference Include="..\FiLogger.Caching.MemoryCache\PlinxPlanner.Caching.MemCache.csproj" />
-    <ProjectReference Include="..\FiLogger.Caching\PlinxPlanner.Caching.Contracts.csproj" />
     <ProjectReference Include="..\FiLogger.Context\PlinxPlanner.Context.csproj" />
     <ProjectReference Include="..\FiLogger.DataAccess.EntityFramework\PlinxPlanner.DataAccess.EntityFramework.csproj" />
     <ProjectReference Include="..\FiLogger.DataAccess\PlinxPlanner.DataAccess.Contracts.csproj" />

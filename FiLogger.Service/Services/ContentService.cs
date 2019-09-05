@@ -1,5 +1,4 @@
-﻿using PlinxPlanner.Caching;
-using PlinxPlanner.Common.Models;
+﻿using PlinxPlanner.Common.Models;
 using PlinxPlanner.DataAccess.Contracts.RepositoryContracts;
 using PlinxPlanner.DataAccess.EntityFramework;
 using PlinxPlanner.Service.Contracts;
