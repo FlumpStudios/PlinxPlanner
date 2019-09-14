@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+{% load static %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+<html lang="en">
+  <head>
+    <title>Paul marrable &mdash; Stuff about me</title>
+    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="description" content="Portfolio and other information for web and game developer, Paul Marrable">
+    <meta name="author" content="Paul Marrable">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="fav.png"/>
+
+    
+  </head>
+  <body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+   
+    <nav class="navbar navbar-expand-lg site-navbar navbar-light bg-light" id="pb-navbar">
+
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="index.html">{{page.title}}</a>
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample09">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#section-home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-about">About</a></li>
+    
+            <li class="nav-item"><a class="nav-link" href="#section-portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#section-resume">Experience</a></li>         
+            <li class="nav-item"><a class="nav-link" href="#section-contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+  {% image page.intro_background original as img %}
+    <section class="site-hero" style="background-image: url({{img.url}});" id="section-home" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row intro-text align-items-center justify-content-center">
+          <div class="col-md-10 text-center">
+            <h1 class="site-heading site-animate">{{ page.intro_header}}</h1>
+              <span class="lead site-subheading mb-4 site-animate">  
+              {{page.intro_text|richtext}}
+              </span>
+            <p><a href="#section-about" class="smoothscroll btn btn-primary px-4 py-3">{{page.intro_continue_button_text}}</a></p>
+          </div>
+        </div>
+      </div>
+    </section> <!-- section -->
+
+  
+    <section class="site-section" id="section-about">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
+            <img src="images/image_1_long.jpg" alt="Image placeholder" class="img-fluid">
+          </div>
+          <div class="col-lg-5 pl-lg-5">
+            <div class="section-heading">
+              <h2>About <strong>Me</strong></h2>              
+            </div>          
+            <strong>HERE {{page.app_name}}</strong>
+            <p>I am currently a full stack developer for the New Media department at Listers in Stratford. I also run an independent video game studio called Flump Studios and a small web design company called Plinx. 
+            </p>
+            <p>
+            I have been developing software and games for over 25 years and I have a very strong passion for software development and programming. Over the years I have gained experience developing with C#, C++, Javascript, Python, VB, Lua,Unity 3D, HTML, CSS, SASS, AngularJS, ReactJS, ASP.Net, SQL and various other languages and frameworks. 
+            </p>
+            <p>
+            As a web developer, my current preferred stack is C# .Net Core 2+ , Entity FW core and ReactJS with Redux.
+            </p>
+            <p>
+            As a game developer, I recently switched from Monogame to Unity 3D to aid development time. However I am currently working on a custom 2.5D engine in Monogame in my spare time, which should speed up development even further.
+            </p>
+            <p>
+            I live in Leamington Spa with my wife and 2 sons, I enjoy cycling and the occasional run.
+            </p>
+            
+
+            <p>
+              <a href="Paul_Marrable_Cv.pdf" target="_blank" class="btn btn-secondary px-4 py-2 btn-sm">Download CV</a>
+            </p>
+            
+          </div>
+        </div>
+
+        <div class="row pt-5">
+          <div class="col-md-3 mb-3">
+            <div class="section-heading">
+              <h2>My <strong>Skills</strong></h2>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="skill">
+              <h3>C#</h3>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                  <span>92%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>React</h3>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                  <span>88%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>AngualrJS</h3>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">
+                  <span>82%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>SQL</h3>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <span>75%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>CSS/SASS</h3>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                  <span>88%</span>
+                </div>
+              </div>
+            </div>
+            <div class="skill">
+              <h3>Umbraco</h3>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                  <span>80%</span>
+                </div>
+              </div>
+            </div>
+            <div class="skill">
+              <h3>Unity 3D</h3>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <span>85%</span>
+                </div>
+              </div>
+            </div>
+            <div class="skill">
+              <h3>Photoshop</h3>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 87%" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">
+                  <span>87%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section bg-light">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <div class="section-heading text-center">
+              <h2>Product <strong>Reviews</strong></h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+		          <div class="col-md-6">
+            
+            <div class="block-47 d-flex mb-5">
+              <div class="block-47-image">
+           
+              </div>
+              <blockquote class="block-47-quote">
+                <p>&ldquo;There’s no way around it, in my opinion. Horizon Shift 81 is a must have for any Switch owning SHMUP fan.&rdquo;</p>
+                <cite class="block-47-quote-author">&mdash;<a target="_blank" href="https://chrisunseen.com/reviews/horizon-shift-81-review/">9/10 - The Nintendo Nomad</a></cite>
+              </blockquote>
+            </div>
+
+        </div>
+		          <div class="col-md-6">
+            
+            <div class="block-47 d-flex mb-5">
+              <div class="block-47-image">
+           
+              </div>
+              <blockquote class="block-47-quote">
+                <p>&ldquo;This is one of the best shoot 'em ups available on the Nintendo Switch&rdquo;</p>
+                <cite class="block-47-quote-author">&mdash;<a target="_blank" href="http://www.defunctgames.com/courant/1340/horizon-shift-81">(A-) – Defunct Games</a></cite>
+              </blockquote>
+            </div>
+        </div>
+					          <div class="col-md-6">
+            
+            <div class="block-47 d-flex mb-5">
+              <div class="block-47-image">
+           
+              </div>
+              <blockquote class="block-47-quote">
+                <p>&ldquo;Overall, Horizon Shift ’81 is a great time. A unique, fast-paced shooter that oozes enthusiasm and passion&rdquo;</p>
+                <cite class="block-47-quote-author">&mdash;<a target="_blank" href="http://www.nintendolife.com/news/2019/01/nindie_round_up_snowboarding_the_next_phase_the_keep_horizon_shift_81_samsara_and_gunman_clive_hd_collection">Thumbs Up – Nintendo Life</a></cite>
+              </blockquote>
+            </div>
+        </div>
+				          <div class="col-md-6">
+            
+            <div class="block-47 d-flex mb-5">
+              <div class="block-47-image">
+           
+              </div>
+              <blockquote class="block-47-quote">
+                <p>&ldquo;The arcade shooter inspired gameplay puts a fun twist on the classic genre that provides hours of pure, flashy entertainment. &rdquo;</p>
+                <cite class="block-47-quote-author">&mdash;<a target="_blank" href="http://www.defunctgames.com/courant/1340/horizon-shift-81">8/10 – TheSixthAxis</a></cite>
+              </blockquote>
+            </div>
+        </div>
+          <div class="col-md-6">
+            
+            <div class="block-47 d-flex mb-5">
+              <div class="block-47-image">
+           
+              </div>
+              <blockquote class="block-47-quote">
+                <p>&ldquo;It’s half platformer, half shoot ‘em up. Isn’t that beautiful?&rdquo;</p>
+                <cite class="block-47-quote-author">&mdash;<a target="_blank" href="https://www.rockpapershotgun.com/2016/05/28/bouncing-makes-you-invulnerable-in-hyper-bounce-blast/">Rock Paper Shotgun</a></cite>
+              </blockquote>
+            </div>
+
+        </div>
+          <div class="col-md-6">
+            
+            <div class="block-47 d-flex mb-5">
+                <div class="block-47-image">
+             
+                </div>
+                <blockquote class="block-47-quote">
+                  <p>&ldquo;Hyper Bounce Blast has a ton of replay value and is super entertaining.&rdquo;</p>
+                  <cite class="block-47-quote-author">&mdash;A rating <a target="_blank" href="https://www.youtube.com/watch?v=-2eP3lmF6a0">Ubercrit</a></cite>
+                </blockquote>
+              </div>
+
+          </div>
+
+
+          <div class="col-md-6">
+
+            <div class="block-47 d-flex mb-5">
+              <div class="block-47-image">
+             
+              </div>
+              <blockquote class="block-47-quote">
+                <p>&ldquo;Hyper Bounce Blast is Flump Studios’ latest love child. It mixes a whole lot of genres together in one crazy mashup and it’s surprisingly good at it as well.&rdquo;</p>
+                <cite class="block-47-quote-author">&mdash; 9/10 <a href="http://3rd-strike.com/hyper-bounce-blast-review/" target="_blank">3rd Strike</a></cite>
+              </blockquote>
+            </div>
+
+        </div>
+          <div class="col-md-6">            
+            <div class="block-47 d-flex mb-5">
+                <div class="block-47-image">               
+                </div>
+                <blockquote class="block-47-quote">
+                  <p>&ldquo;If you are an unwavering addict of shmup and bullet hell games or are simply curious with a streak of masochism, you need to check Horizon Shift out. Your search for space shooter heaven is over. This is the end of the line.&rdquo;</p>
+                  <cite class="block-47-quote-author">&mdash; 9/10 <a target="_blank" href="http://gamershonesttruth.com/horizon-shift-review">Gamers Honest Truth</a></cite>
+                </blockquote>
+              </div>
+          </div>
+          <div class="col-md-6">            
+            <div class="block-47 d-flex mb-5">
+                <div class="block-47-image">               
+                </div>
+                <blockquote class="block-47-quote">
+                  <p>&ldquo;Arcade nostalgia meets indie Innovation.&rdquo;</p>
+                  <cite class="block-47-quote-author">&mdash; 9/10 <a target="_blank" href="http://www.splashgames.de/php/rezensionen/rezension/22236/horizon_shift">Splash Games </a></cite>
+                </blockquote>
+              </div>
+          </div>
+          <div class="col-md-6">            
+            <div class="block-47 d-flex mb-5">
+                <div class="block-47-image">               
+                </div>
+                <blockquote class="block-47-quote">
+                  <p>&ldquo;It features great music and fast paced gameplay. If you’re a fan of old-school arcade games, this is definitely one for you.&rdquo;</p>
+                  <cite class="block-47-quote-author">&mdash; 8.5/10 <a target="_blank" href="http://game-insider.com/2015/07/10/horizon-shift-review-pulse-pounding-addiction/">Game Insider</a></cite>
+                </blockquote>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!--
+    <section class="site-section border-top pb-0"  id="section-services">
+      <div class="container">
+
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <div class="section-heading text-center">
+              <h2>My <strong>Services</strong></h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4 text-center mb-5">
+            <div class="site-service-item site-animate" data-animate-effect="fadeIn">
+              <span class="icon">
+                <span class="icon-phone3"></span>
+              </span>
+              <h3 class="mb-4">Mobile Optimize</h3>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+              <p><a href="#" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 text-center mb-5">
+            <div class="site-service-item site-animate" data-animate-effect="fadeIn">
+              <span class="icon">
+                <span class="icon-wallet2"></span>
+              </span>
+              <h3 class="mb-4">Increase Revenue</h3>
+              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+              <p><a href="#" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 text-center mb-5">
+            <div class="site-service-item site-animate" data-animate-effect="fadeIn">
+              <span class="icon">
+                <span class="icon-lightbulb"></span>
+              </span>
+              <h3 class="mb-4">Intuitive Idea</h3>
+              <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+              <p><a href="#" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 text-center mb-5">
+            <div class="site-service-item site-animate" data-animate-effect="fadeIn">
+              <span class="icon">
+                <span class="icon-phone3"></span>
+              </span>
+              <h3 class="mb-4">Mobile Optimize</h3>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+              <p><a href="#" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 text-center mb-5">
+            <div class="site-service-item site-animate" data-animate-effect="fadeIn">
+              <span class="icon">
+                <span class="icon-wallet2"></span>
+              </span>
+              <h3 class="mb-4">Increase Revenue</h3>
+              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+              <p><a href="#" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 text-center mb-5">
+            <div class="site-service-item site-animate" data-animate-effect="fadeIn">
+              <span class="icon">
+                <span class="icon-lightbulb"></span>
+              </span>
+              <h3 class="mb-4">Intuitive Idea</h3>
+              <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+              <p><a href="#" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="site-section" id="section-features">
+      <div class="container">
+        <div class="row site-section">
+          <div class="col-md-8">
+            <p><img src="images/laptop_1.jpg" alt="" class="img-fluid"></p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="mb-3">Big Benefits for Small Business</h3>
+            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+
+            <ul class="site-list">
+              <li class="site-check">Pointing has no control</li>
+              <li class="site-check">A small river named Duden flows</li>
+              <li class="site-check">Roasted parts of sentences fly into your mouth</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8 order-md-2">
+            <p><img src="images/laptop_1.jpg" alt="" class="img-fluid"></p>
+          </div>
+          <div class="col-md-4 order-md-1">
+            <h3 class="mb-3">All in One Place</h3>
+            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+
+            <ul class="site-list">
+              <li class="site-check">Pointing has no control</li>
+              <li class="site-check">A small river named Duden flows</li>
+              <li class="site-check">Roasted parts of sentences fly into your mouth</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    -->
+
+    <section class="site-section" id="section-portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="section-heading text-center col-md-12">
+              <h2>Featured <strong>Portfolio</strong></h2>
+            </div>
+        </div>
+        <div class="filters">
+                        <ul>
+                            <li class="active" id="select-all" data-filter="*">All</li>
+                            <li data-filter=".Webdesign" id="select-webdesign" >Web design</li>
+                            <li data-filter=".game">video Games</li>                            
+                        </ul>
+                    </div>
+                    
+                    <div class="filters-content">
+                        <div class="row grid">
+                            <div class="single-portfolio col-sm-4 all Webdesign">
+                              <div class="relative">
+                                <div class="thumb">
+                                  <div class="overlay overlay-bg"></div>
+                                   <img class="image img-fluid" src="images/p1.jpg" alt="">
+                                </div>
+                  <a href="http://fathomtoken.com/" target="_blank" class="img-pop-up">  
+                    <div class="middle">
+                      <div class="text align-self-center d-flex"><img src="images/p1.jpg" alt=""></div>
+                    </div>
+                </a>                                  
+                              </div>
+                <div class="p-inner">
+                    <h4><a href="http://fathomtoken.com/" target="_blank"> Fathom Token</a></h4>
+                  <div class="cat">Web design</div>
+                </div>                                         
+                            </div>
+                            <div class="single-portfolio col-sm-4 all Webdesign">
+                              <div class="relative">
+                                <div class="thumb">
+                                  <div class="overlay overlay-bg"></div>
+                                   <img class="image img-fluid" src="images/p2.jpg" alt="">
+                                </div>
+                  <a href="http://www.plinx-tech.co.uk" target="_blank" class="img-pop-up">  
+                    <div class="middle">
+                      <div class="text align-self-center d-flex"><img src="images/p2.jpg" alt=""></div>
+                    </div>
+                </a>                                  
+                              </div>
+                <div class="p-inner">
+                    <h4><a href="http://www.plinx-tech.co.uk" target="_blank"> Plinx</a></h4>
+                  <div class="cat">Web design</div>
+                </div>                                         
+                            </div>                            
+                            <div class="single-portfolio col-sm-4 all Webdesign">
+                              <div class="relative">
+                                <div class="thumb">
+                                  <div class="overlay overlay-bg"></div>
+                                   <img class="image img-fluid" src="images/p3.jpg" alt="">
+                                </div>
+                  <a href="http://www.flumpstudios.co.uk" target="_blank" class="img-pop-up">  
+                    <div class="middle">
+                      <div class="text align-self-center d-flex"><img src="images/p3.jpg" alt=""></div>
+                    </div>
+                  </a> 
+                                  
+                              </div>
+                                <div class="p-inner">
+                                    <h4><a href="http://www.flumpstudios.co.uk" target="_blank">Flump Studios</a></h4>
+                                    <div class="cat">Web Design</div>
+                                </div>
+                            </div>
+							                 <div class="single-portfolio col-sm-4 all game">
+                              <div class="relative">
+                                <div class="thumb">
+                                  <div class="overlay overlay-bg"></div>
+                                   <img class="image img-fluid" src="images/hs81.jpg" alt="">
+                                </div>
+                  <a href="https://www.nintendo.com/games/detail/horizon-shift-81-switch/" target="_blank" class="img-pop-up">  
+                    <div class="middle">
+                      <div class="text align-self-center d-flex"><img src="images/p6.jpg" alt=""></div>
+                    </div>
+                  </a>                                
+                              </div>
+                                <div class="p-inner">
+                                    <h4><a href="https://www.nintendo.com/games/detail/horizon-shift-81-switch/" target="_blank">Horizon Shift '81</a></h4>
+                                    <div class="cat">Video Game</div>
+                                </div>
+                            </div>
+                            <div class="single-portfolio col-sm-4 all game   ">
+                              <div class="relative">
+                                <div class="thumb">
+                                  <div class="overlay overlay-bg"></div>
+                                   <img class="image img-fluid" src="images/p4.jpg" alt="">
+                                </div>
+                  <a href="https://store.steampowered.com/app/407940/Hyper_Bounce_Blast/" target="_blank" class="img-pop-up">  
+                    <div class="middle">
+                      <div class="text align-self-center d-flex"><img src="images/p4.jpg" alt=""></div>
+                    </div>
+                  </a>                                
+                              </div> 
+                                <div class="p-inner">
+                                    <h4><a href="https://store.steampowered.com/app/407940/Hyper_Bounce_Blast/" target="_blank">Hyper Bounce Blast</a></h4>
+                                    <div class="cat">Video Game</div>
+                                </div>
+                            </div>
+                            <div class="single-portfolio col-sm-4 all game ">
+                              <div class="relative">
+                              <div class="thumb">
+                                  <div class="overlay overlay-bg"></div>
+                                   <img class="image img-fluid" src="images/p5.jpg" alt="">
+                                </div>
+                  <a href="https://store.steampowered.com/app/326120/Horizon_Shift/" target="_blank" class="img-pop-up">  
+                    <div class="middle">
+                      <div class="text align-self-center d-flex"><img src="images/p5.jpg" alt=""></div>
+                    </div>
+                  </a>                                
+                              </div>
+                                <div class="p-inner">
+                                    <h4><a href="https://store.steampowered.com/app/326120/Horizon_Shift/" target="_blank" >Horizon Shift</a></h4>
+                                    <div class="cat">Video game</div>
+                                </div>
+                            </div>           
+                        </div>
+                    </div>
+      </div>
+    </section>
+    <!-- .section -->
+
+    <section class="site-section bg-light " id="section-resume">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <div class="section-heading text-center">
+              <h2>My <strong>Experience</strong></h2>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <h2 class="mb-5"></h2>
+            <div class="resume-item mb-4">
+              <span class="date"><span class="icon-calendar"></span> January 2019 - Present</span>
+              <h3>Full stack web developer</h3>
+              <p>API, Web app and website development. Working primarily with .NET Core 2+, React with redux, and MSsql with Entity FW core. </p>
+              <span class="school">Listers</span>
+            </div>
+            <div class="resume-item mb-4">
+              <span class="date"><span class="icon-calendar"></span> April 2016 - January 2017</span>
+              <h3>Full stack web developer</h3>
+              <p>Web app and website design and development.Working primarily with C# .NET and .NET Core, React, Umbraco and MSsql with Entity FW Core and ADO. </p>
+              <span class="school">IRESS</span>
+            </div>
+
+            <div class="resume-item mb-4">
+              <span class="date"><span class="icon-calendar"></span> March 2017 - Present</span>
+              <h3>Business Owner</h3>
+              <p>Plinx web design offers simple, out of the box, web solutions for individuals and companies looking for straight forward, affordable and beautiful web designs.</p>
+              <span class="school">Plinx</span>
+            </div>
+
+            <div class="resume-item mb-4">
+              <span class="date"><span class="icon-calendar"></span> January 2011 - Present</span>
+              <h3>Video game developer</h3>
+              <p>The running of Flump Studios involves the creation of video games, both solo and part of a small team. For our latest project we are using C# with Unity3D and .NET core for our online services, moving over from C# with XNA/Monogame to aid in development speed. For many years Flump Studios was my full time job, until my first son was born and decided I needed somethng more stable </p>
+              <span class="school">Flump Studios</span>
+            </div>
+
+            <div class="resume-item mb-4">
+              <span class="date"><span class="icon-calendar"></span> May 2005 - December 2010.</span>
+              <h3>Co-Owner</h3>
+              <p>Web design, mainly static static sites via dreamweaver and/or pure HTML/CSS/JS,Creation of small business desktop software with C++ and VB .Net and image creation and manipulation</p>
+              <span class="school">Benesoz IT Solutions</span>
+            </div>
+
+          </div>
+    
+        </div>
+      </div>
+    </section> <!-- .section -->
+<!--
+    <section class="site-section" id="section-blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <div class="section-heading text-center">
+              <h2>Blog on <strong>Medium</strong></h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="blog-entry">
+              <a href="#"><img src="images/post_1.jpg" alt="Image placeholder" class="img-fluid"></a>
+              <div class="blog-entry-text">
+                <h3><a href="#">Creative Product Designer From Facebook</a></h3>
+                <p class="mb-4">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+
+                <div class="meta">
+                  <a href="#"><span class="icon-calendar"></span> Aug 7, 2018</a>
+                  <a href="#"><span class="icon-bubble"></span> 5 Comments</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="blog-entry">
+              <a href="#"><img src="images/post_2.jpg" alt="Image placeholder" class="img-fluid"></a>
+              <div class="blog-entry-text">
+                <h3><a href="#">Creative Product Designer From Facebook</a></h3>
+                <p class="mb-4">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+
+                <div class="meta">
+                  <a href="#"><span class="icon-calendar"></span> Aug 7, 2018</a>
+                  <a href="#"><span class="icon-bubble"></span> 5 Comments</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="blog-entry">
+              <a href="#"><img src="images/post_3.jpg" alt="Image placeholder" class="img-fluid"></a>
+              <div class="blog-entry-text">
+                <h3><a href="#">Creative Product Designer From Facebook</a></h3>
+                <p class="mb-4">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+
+                <div class="meta">
+                  <a href="#"><span class="icon-calendar"></span> Aug 7, 2018</a>
+                  <a href="#"><span class="icon-bubble"></span> 5 Comments</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+-->
+    <section class="site-section" id="section-contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <div class="section-heading text-center">
+              <h2>Wanna <strong>Contact</strong> Me?</h2>
+            </div>
+          </div>
+          
+   
+          <div class="col-md-5 pl-md-5">
+            <h3 class="mb-5">My Contact Details</h3>
+            <ul class="site-contact-details">
+              <li>
+                <span class="text-uppercase">Email</span>
+                <a href="mailto:paul.marrable@plinx-tech.co.uk" >paul.marrable@plinx-tech.co.uk</a>
+              </li>
+              <li>
+                <span class="text-uppercase">Phone</span>
+                
+                <a href="tel:07824 366376">07824 366376</a>
+              </li>             
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row mb-3">
+          <div class="col-md-12 text-center">
+            <p>
+              <a href="https://www.facebook.com/paul.marrable.3" target="_blank" class="social-item"><span class="icon-facebook2"></span></a>
+              <a href="https://twitter.com/FlumpStudios" target="_blank" class="social-item"><span class="icon-twitter"></span></a>
+              <a href="https://www.linkedin.com/in/paul-marrable" target="_blank" class="social-item"><span class="icon-linkedin2"></span></a>
+              <a href="https://www.youtube.com/FlumpStudiosUK" class="social-item"><span class="icon-youtube"></span></a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+            <p class="col-12 text-center">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    </footer>
+
+    
+    
+
+    
+    <script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+    <script src="{% static 'js/vendor/popper.min.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    
+    <script src="{% static 'js/vendor/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery.waypoints.min.js' %}"></script>
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+ 
+
+  </body>
+</html>
+<script>
+
+  //Hack to stop weird portfolio bug on live
+  $(document).ready(function(){
+    setTimeout(function(){ $( "#select-webdesign" ).trigger( "click" ); }, 200);
+    setTimeout(function(){ $( "#select-all" ).trigger( "click" ); }, 400);    
+  });
+</script>

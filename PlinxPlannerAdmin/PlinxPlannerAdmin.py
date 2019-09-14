@@ -2,6 +2,8 @@ import tkinter as tk
 import FileManger
 from tkinter.ttk import *
 from Repository import Customer
+import webbrowser
+import settings
 
 class MainScreen:
     def __init__(self, master):        
@@ -17,14 +19,21 @@ class MainScreen:
         menu = tk.Menu(self.master) 
         self.master.config(menu=menu)
         file = tk.Menu(menu)
-        file.add_command(label="Exit", command=self.client_exit)
+        file.add_command(label="Create new order", command=self.load_orderform)     
         file.add_command(label="Refresh", command=self.clear_table)
+        file.add_command(label="Exit", command=self.client_exit)        
         menu.add_cascade(label="File", menu=file)        
      
+    def load_orderform(self):
+        webbrowser.open(settings.orderform_url)
+
+
     def populate_table(self):        
         for x in Customer.Customer().getList():
              self.tree.insert('', 'end', text=(x["customerId"]), values=(x["companyName"],x["firstName"] + " " + x["surname"], x["sitedetails"]["templateId"], x["firstContactDate"],x["sitedetails"]["superUserCreated"], x["sitedetails"]["siteStatus"]["name"]))
 
+
+                
     def clear_table(self):
         print("Refreshing Results")
         self.tree.delete(*self.tree.get_children())
