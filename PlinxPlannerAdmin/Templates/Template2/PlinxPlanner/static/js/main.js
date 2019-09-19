@@ -191,19 +191,7 @@
     * ---------------------------------------------------- */ 
     var clMasonryFolio = function () {
         
-        var containerBricks = $('.masonry');
 
-        containerBricks.imagesLoaded(function () {
-            containerBricks.masonry({
-                itemSelector: '.masonry__brick',
-                resize: true
-            });
-        });
-
-        // layout Masonry after each image loads
-        containerBricks.imagesLoaded().progress( function() {
-            containerBricks.masonry('layout');
-        });
     };
 
 

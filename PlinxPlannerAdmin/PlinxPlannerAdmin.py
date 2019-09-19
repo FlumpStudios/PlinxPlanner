@@ -33,7 +33,7 @@ class MainScreen:
              self.tree.insert('', 'end', text=(x["customerId"]), values=(x["companyName"],x["firstName"] + " " + x["surname"], x["sitedetails"]["templateId"], x["firstContactDate"],x["sitedetails"]["superUserCreated"], x["sitedetails"]["siteStatus"]["name"]))
 
 
-                
+                    
     def clear_table(self):
         print("Refreshing Results")
         self.tree.delete(*self.tree.get_children())
