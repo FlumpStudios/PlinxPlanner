@@ -35,7 +35,7 @@ namespace PlinxPlanner.Context.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Seed the database
-            if (_appSettings.Value.Database.SeedDbOnCreate) DBInitialiser.SeedDB(modelBuilder);
+           // if (_appSettings.Value.Database.SeedDbOnCreate) DBInitialiser.SeedDB(modelBuilder);
         }
 
     }
