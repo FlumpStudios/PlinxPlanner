@@ -180,6 +180,8 @@
     <Folder Include="Templates\Template2\search\templates\" />
     <Folder Include="Templates\Template2\search\templates\search\" />
     <Folder Include="Templates\Template2\search\__pycache__\" />
+    <Folder Include="Templates\Template4 - Copy\" />
+    <Folder Include="Templates\Template4 - Copy\home\" />
     <Folder Include="Templates\Template5\" />
     <Folder Include="Templates\Template5\home\" />
     <Folder Include="Templates\Template5\home\migrations\" />
